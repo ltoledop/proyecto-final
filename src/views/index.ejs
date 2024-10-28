@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Gamer - Ofertas</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/LOGO-COMPUTER_GAMER.png" sizes="32x32">
+</head>
+<body>
+    <%- include('partials/navigation') %>
+
+    <!-- Carrusel Mejorado -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <!-- Imágenes dinámicas con EJS -->
+            <% images.forEach((image, index) => { %>
+                <img src="<%= image.src %>" class="carousel-image <%= index === 0 ? 'active' : '' %>" alt="<%= image.alt %>">
+            <% }) %>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Nueva Sección: Zona Gamer -->
+    <section class="zona-gamer">
+        <h2>Categorías</h2>
+        <div class="gamer-grid">
+            <div class="gamer-item">
+                <img src="img/mouse.png" alt="Mouse">
+                <h3>Mouse</h3>
+                <p>Juega con estilo</p>
+            </div>
+            <div class="gamer-item">
+                <img src="img/teclado.png" alt="Teclado">
+                <h3>Teclado</h3>
+                <p>Juega con estilo</p>
+            </div>
+            <div class="gamer-item">
+                <img src="img/audifono.png" alt="Audífono">
+                <h3>Audífono</h3>
+                <p>Sumérgete en el juego</p>
+            </div>
+            <div class="gamer-item">
+                <img src="img/accesorios.png" alt="Accesorios">
+                <h3>Accesorios</h3>
+                <p>Todo lo que necesitas para ganar</p>
+            </div>
+            <div class="gamer-item">
+                <img src="img/monitor.png" alt="Monitor">
+                <h3>Monitor</h3>
+                <p>Detalles más nítidos</p>
+            </div>
+            <div class="gamer-item">
+                <img src="img/sillas.png" alt="Sillas">
+                <h3>Sillas</h3>
+                <p>Comodidad y Ergonomía</p>
+            </div>
+            <div class="gamer-item">
+                <img src="img/case.png" alt="Case">
+                <h3>Case</h3>
+                <p>Para deslumbrar</p>
+            </div>
+        </div>
+    </section>
+
+    
+ <!-- Nueva Sección: Los Más Vendidos -->
+<section class="seccion-mas-vendidos">
+    <h2>Los más vendidos</h2>
+    <div class="contenedor-mas-vendidos">
+        <button class="flecha izquierda">&#x276E;</button>
+        <div class="carrusel-mas-vendidos">
+            <% masVendidos.forEach((producto, index) => { %>
+                <div class="elemento-mas-vendido">
+                    <div class="contenedor-imagen">
+                        <img src="<%= producto.src %>" alt="<%= producto.alt %>">
+                    </div>
+                    <div class="contenedor-texto">
+                        <p class="categoria_producto"><%= producto.categoria %></p>
+                        <p class="nombre-producto"><%= producto.name %></p>
+                        <p class="precio-producto">S/ <%= producto.price %></p>
+                    </div>
+                </div>
+                
+            <% }) %>
+        </div>
+        <button class="flecha derecha">&#x276F;</button>
+    </div>
+</section>
+
+    <%- include('partials/footer') %>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-image');
+        const slideInterval = 5000; // Tiempo en milisegundos entre cambios (5 segundos)
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+            showSlide(currentSlide);
+        }
+
+        function startAutoSlide() {
+            setInterval(() => {
+                moveSlide(1); // Cambiar a la siguiente imagen automáticamente
+            }, slideInterval);
+        }
+
+// Carrusel Los Más Vendidos (Desplazamiento de Uno en Uno)
+let indiceProductoActual = 0;
+const elementosVisibles = 3; // Número de productos visibles a la vez
+const productosMasVendidos = document.querySelectorAll('.elemento-mas-vendido');
+const contenedorCarrusel = document.querySelector('.carrusel-mas-vendidos');
+const totalProductos = productosMasVendidos.length;
+
+function moverMasVendidos(direccion) {
+    const anchoProducto = 310; // Ajusta al ancho del producto (ancho + margen)
+    const elementosAMover = 1; // Número de productos a desplazar
+
+    // Actualizar el índice según la dirección
+    indiceProductoActual += direccion * elementosAMover;
+
+    // Control de límites para evitar que el carrusel vaya más allá del principio o final
+    if (indiceProductoActual < 0) {
+        indiceProductoActual = 0; // No se puede ir más allá del primer producto
+    } else if (indiceProductoActual > totalProductos - 5) {
+        indiceProductoActual = totalProductos - 5; // Evita avanzar más allá del último grupo visible
+    }
+
+    // Calcular el desplazamiento y aplicarlo
+    const desplazamiento = indiceProductoActual * -anchoProducto;
+    contenedorCarrusel.style.transform = `translateX(${desplazamiento}px)`;  
+    contenedorCarrusel.style.transition = 'transform 0.5s ease'; // Suavizar el movimiento
+}
+
+// Event listeners para los botones de flechas
+document.querySelector('.flecha.izquierda').addEventListener('click', () => moverMasVendidos(-1));
+document.querySelector('.flecha.derecha').addEventListener('click', () => moverMasVendidos(1));
+
+
+        // Inicializar el carrusel y activar el cambio automático
+        showSlide(currentSlide);
+        startAutoSlide();
+    </script>
+</body>
+</html>

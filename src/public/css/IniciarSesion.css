@@ -1,0 +1,161 @@
+/* Estilo para Inicio de sesión */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url('/img/login/Imagen2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.formulario {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro más transparente */
+    border: 2px solid #F5C85C; /* Borde amarillo */
+    padding: 45px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+h1 {
+    text-align: center;
+    color: #F5C85C;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    width: 150px; 
+    height: auto; 
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #ffffff;
+    outline: none;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.recordar {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.recordar a {
+    color: #F5C85C;
+    text-decoration: none;
+}
+
+.recordar a:hover {
+    text-decoration: underline;
+}
+
+input[type="submit"] {
+    background: #ffffff; 
+    color: #000000; 
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #F5C85C;
+}
+
+.registrarse {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.registrarse a {
+    color: #F5C85C;
+    text-decoration: none;
+}
+
+.registrarse b {
+    color: #fbfdff;
+    text-decoration: none;
+}
+
+.registrarse a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el botón "Volver al Home" */
+.volver-home {
+    position: fixed;
+    top: 20px; 
+    left: 20px;  
+    z-index: 1000;  
+}
+
+.volver-home a {
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro con un poco de transparencia */
+    color: #F5C85C;
+    padding: 10px 20px;
+    border-radius: 10px; /* Aumentar el redondeo de las esquinas */
+    border: 2px solid #F5C85C; /* Borde amarillo */
+    text-decoration: none;
+    font-size: 18px; 
+    transition: background 0.3s ease, border 0.3s ease; /* Agregar transición para el borde */
+}
+
+
+.volver-home a:hover {
+    background: #222; 
+}

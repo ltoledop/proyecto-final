@@ -1,0 +1,497 @@
+body, html {
+  font-family: Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.navbar {
+  background: linear-gradient(to bottom, #0D0D0D, #B8860B);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {    
+  width: 6rem;
+  height: auto;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+footer {
+  background: linear-gradient(to bottom, #808080, #000000);
+  color: white;
+  padding: 40px 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  text-align: left;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 15px;
+}
+
+.footer-section h4 {
+  font-size: 1.2em;
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  color: #E0E0E0;
+  margin: 5px 0;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.footer .social-icons a img {
+  width: 25px;
+  transition: transform 0.3s ease;
+}
+
+.footer .social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #555;
+  padding-top: 20px;
+  font-size: 0.85em;
+  color: #FFD700;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+.titulo_home {
+  text-align: center;
+  margin-top: 0.5em;
+  font-family: sans-serif;
+  font-size: 45px;
+}
+
+/* Carrusel CSS */
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 550px;
+}
+
+.carousel {
+  position: relative;
+  height: 100%;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  z-index: 2;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.deals-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons i, .profile-icon {
+  margin-left: 15px;
+  font-size: 1.2em;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 2.5em;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #f4f7ff;
+  padding: 40px;
+  text-align: center;
+}
+
+.testimonial-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #eaf1ff;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.quote {
+  font-size: 1.1em;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.author {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.review-btn {
+  background-color: #0066ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: 2px solid #0066ff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.review-btn:hover {
+  background-color: transparent;
+  color: #0066ff;
+}
+
+.dots {
+  margin-top: 15px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: #0066ff;
+}
+
+/* Benefits Section */
+.benefits {
+  background-color: #f4f7ff;
+  padding: 40px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.benefit-item {
+  max-width: 250px;
+}
+
+.benefit-item .icon {
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+.benefit-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to bottom, #333333, #111111);
+  color: #FFD700; /* Color dorado claro */
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer p {
+  margin: 10px 0;
+}
+
+.footer .social-icons {
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  margin: 0 10px;
+  color: #ffffff;
+}
+
+.footer .social-icons a img {
+  width: 25px;
+}
+
+/* Sección Zona Gamer */
+.zona-gamer {
+  text-align: center;
+  margin-top: 5px;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+ h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.gamer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gamer-item {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.gamer-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  background-color: #333333;
+}
+
+.gamer-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.gamer-item h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  margin: 0;
+}
+
+.gamer-item p {
+  font-size: 1.2em;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+}
+
+/* Sección Los Más Vendidos */
+.seccion-mas-vendidos {
+  margin-top: 2px;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.contenedor-mas-vendidos {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carrusel-mas-vendidos {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: max-content; /* Para que el contenedor pueda tener el ancho de todos los elementos */
+}
+
+.elemento-mas-vendido {
+  flex: 0 0 270px; /* Tamaño fijo de cada producto */
+  margin: 5px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: left;
+  min-height: 350px; /* Asegura una altura consistente para cada tarjeta */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que la estructura de la tarjeta esté equilibrada */
+}
+
+.contenedor-imagen {
+  background-color: #fff;
+  padding: 1em;
+  text-align: center; /* Centrar la imagen */
+  margin-bottom: 1px; /* Espacio inferior entre la imagen y el contenido de texto */
+}
+
+.contenedor-imagen img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Ajustar la altura máxima para mantener el tamaño consistente */
+  object-fit: contain; /* Mantener la imagen dentro de su contenedor sin recortes */
+}
+
+.contenedor-texto {
+  padding-top: 2px; /* Asegura un espacio constante entre la imagen y el texto */
+}
+
+.categoria_producto {
+  text-align: left;
+  font-size: 0.8em;
+  color: #333333;
+  margin: 0.1em 0;
+}
+
+.nombre-producto {
+  text-align: left;
+  font-size: 1em;
+  color: #050505;
+  margin: 0.2em 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita el nombre a 2 líneas */
+  -webkit-box-orient: vertical;
+}
+
+.precio-producto {
+  text-align: left;
+  font-size: 1.5em;
+  color: #e30505;
+  margin: 0.2em 0;
+  font-weight: bold;
+  min-height: 30px; /* Asegura que todas las etiquetas de precio se alineen correctamente */
+}
+
+.elemento-mas-vendido img {
+  width: 100%;
+  height: auto;
+}
+
+.flecha {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background:  #B8860B;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flecha.izquierda {
+  left: 10px;
+}
+
+.flecha.derecha {
+  right: 10px;
+}

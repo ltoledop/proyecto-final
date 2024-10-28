@@ -1,0 +1,36 @@
+<!-- views/editarCategoria.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Categoría</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Incluir Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <%- include('partials/sidebar.ejs') %>
+
+    <div class="content container my-5">
+        <h2 class="text-center mb-4">Editar Categoría</h2>
+        <form action="/categorias/<%= categoria.categoria_id %>" method="POST" class="bg-light p-4 rounded shadow-sm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" value="<%= categoria.nombre %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" class="form-control" required><%= categoria.descripcion %></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <!-- Incluir Bootstrap JS y dependencias (jQuery y Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ffffff; /* Texto gris claro */
+}
+
+/* Navegación */
+nav {
+  background-color: #333;
+  padding: 15px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #ff6f61;
+}
+
+/* Sección Nosotros */
+.about-us {
+  padding: 20px;
+  background-color: #1A1A1A; /* Fondo oscuro */
+  color: #FFD700; /* Texto dorado */
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  color: #FFD700; /* Dorado para resaltar */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+/* Secciones generales */
+.about-uss, .shop-com, .safe-hands {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  max-width: 900px; /* Ajuste de ancho máximo */
+  margin: 30px auto; /* Centra y agrega espacio vertical */
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #0D0D0D, #B8860B); /* Fondo en gradiente */
+}
+
+.about-uss {
+  color: #FFD700; /* Texto dorado */
+}
+
+.shop-com {
+  background-color: #333;
+  color: #E0E0E0; /* Texto gris claro */
+}
+
+.safe-hands {
+  color: #FFD700;
+}
+
+/* Estilos de texto */
+.about-text, .shop-text, .safe-hands-text {
+  max-width: 500px;
+  margin-bottom: 15px;
+  padding: 0 20px;
+}
+
+.shop-text {
+  color: #fffbfb;
+}
+
+/* Títulos */
+.about-title, .shop-title, .safe-hands-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #FFD700; /* Color dorado para títulos */
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Descripciones */
+.about-description, .shop-description, .safe-hands-description {
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #fffbfb; /* Texto gris claro */
+  max-width: 700px;
+  margin: auto;
+  text-align: justify;
+}
+
+/* Imágenes */
+.about-image, .shop-image, .safe-hands-image {
+  width: 100%;
+  max-width: 300px; /* Tamaño ajustado */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+}
+
+.about-image:hover, .shop-image:hover, .safe-hands-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Botones */
+button.cta {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button.cta a {
+  color: #fff;
+  text-decoration: none;
+}
+
+button.cta:hover {
+  background-color: #ff8a75;
+}
+
+/* Sección de Cursos */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.course-card {
+  background: linear-gradient(to bottom, #0D0D0D, #B8860B); /* Fondo oscuro */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  text-align: center;
+  color: #FFD700; /* Texto dorado */
+}
+
+.course-info {
+  max-width: 300px;
+  margin-top: 15px;
+}
+
+.course-info h3 {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #FFD700; /* Títulos en dorado */
+  text-align: center;
+}
+
+.course-info p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #E0E0E0; /* Texto en gris claro */
+  text-align: justify;
+}
+
+.course-price-duration {
+  display: flex;
+  justify-content: center; /* Centrado */
+  font-weight: bold;
+}
+
+/* Estilo de las etiquetas de duración y precio */
+.course-price-duration span {
+  background-color: #B8860B; /* Fondo dorado oscuro */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  color: #fff; /* Texto blanco */
+}
+
+/* Imagen dentro de Course Card */
+.course-card img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+/* Sección de Ubicación */
+#ubicacion {
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #0D0D0D, #B8860B); 
+  color: #FFD700; /* Tono dorado */
+  text-align: center;
+  border-radius: 8px;
+}
+
+#ubicacion h2 {
+  font-size: 1.8em;
+  color: #FFD700; /* Dorado brillante */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.map-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 8px;
+}

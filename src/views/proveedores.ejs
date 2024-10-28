@@ -1,0 +1,82 @@
+<!-- views/proveedores.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Proveedores</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- Incluir Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <%- include('partials/sidebar.ejs') %>
+
+    <div class="content container my-5">
+      <h2 class="text-center mb-4">Administración de Proveedores</h2>
+
+      <!-- Botón para agregar nuevo proveedor -->
+      <div class="mb-3 text-right">
+        <a href="/proveedores/nuevo" class="btn btn-success"
+          >Agregar Proveedor</a
+        >
+      </div>
+
+      <!-- Tabla de proveedores -->
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Contacto</th>
+              <th>Teléfono</th>
+              <th>Email</th>
+              <th>Dirección</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% proveedores.forEach(proveedor => { %>
+            <tr>
+              <td><%= proveedor.proveedor_id %></td>
+              <td><%= proveedor.nombre %></td>
+              <td><%= proveedor.contacto %></td>
+              <td><%= proveedor.telefono %></td>
+              <td><%= proveedor.email %></td>
+              <td><%= proveedor.direccion %></td>
+              <td>
+                <!-- Botón Editar -->
+                <a
+                  href="/proveedores/editar/<%= proveedor.proveedor_id %>"
+                  class="btn btn-warning btn-sm"
+                  >Editar</a
+                >
+
+                <!-- Botón Eliminar -->
+                <form
+                  action="/proveedores/<%= proveedor.proveedor_id %>?_method=DELETE"
+                  method="POST"
+                  style="display: inline"
+                >
+                  <button type="submit" class="btn btn-danger btn-sm">
+                    Eliminar
+                  </button>
+                </form>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Incluir Bootstrap JS y dependencias (jQuery y Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
