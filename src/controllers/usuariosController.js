@@ -1,4 +1,3 @@
-// src/controllers/userController.js
 import pool from '../config/connection.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';

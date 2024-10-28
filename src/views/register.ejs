@@ -3,38 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/LOGO-COMPUTER_GAMER.png" sizes="32x32">
-    <title><%= title %></title>
+    <title>Registro</title>
     <link rel="stylesheet" href="/css/IniciarSesion.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <div class="formulario">
-        <img src="/img/LOGO-COMPUTER_GAMER.png" alt="Logo" class="logo">
-        <h1>Crea una cuenta</h1>
-        <form>
-            <label for="nombre">Nombre de Usuario</label>
-            <input type="text" id="nombre" name="nombre" required>
+    <div id="formulario" class="register-container">
+        <h2>Registro</h2>
 
-            <label for="username">Correo Electrónico</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required>
-            
-            <div class="recordar">
-                <a href="/lostpassword">¿Olvidó su contraseña?</a>
+        <form action="/usuarios/registro" method="POST">
+            <!-- Datos del Cliente -->
+            <div class="form-group">
+                <label for="nombre_cliente">Nombre del Cliente:</label>
+                <input type="text" id="nombre_cliente" name="nombre_cliente" placeholder="Ingresa el nombre del cliente" required>
             </div>
-            
-            <input type="submit" value="Iniciar">
-            
-            <div class="registrarse">
-                <b>¿Ya tienes una cuenta?</b>
-                <a href="/login">Inicia Sesión</a>
-            </div>            
-            <div class="volver-home">
-                <a href="/">Volver al Home</a>
+            <div class="form-group">
+                <label for="email_cliente">Correo Electrónico del Cliente:</label>
+                <input type="email" id="email_cliente" name="email_cliente" placeholder="Ingresa el email del cliente" required>
             </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" placeholder="Ingresa el teléfono del cliente" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Ingresa la dirección del cliente" required>
+            </div>
+            <div class="form-group">
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ingresa la ciudad" required>
+            </div>
+            <div class="form-group">
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" placeholder="Ingresa el país" required>
+            </div>
+
+            <!-- Datos del Usuario -->
+            <div class="form-group">
+                <label for="nombre_usuario">Usuario:</label>
+                <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Ingresa tu usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico (Usuario):</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+            </div>
+            <div class="form-group">
+                <label for="rol">Rol:</label>
+                <input type="text" id="rol" name="rol" placeholder="Ingresa el rol (Admin, Cliente, etc.)" required>
+            </div>
+            <button type="submit">Registrarse</button>
         </form>
+               
+        <div class="volver-home">
+            <a href="/">Volver al Home</a>
+        </div>
     </div>
 </body>
 </html>

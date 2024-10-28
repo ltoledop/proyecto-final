@@ -2,11 +2,12 @@ import express from 'express'
 import {dirname, join} from 'path'
 import { fileURLToPath } from 'url'
 import indexRouter from './router/index.js'
-import clientesRoutes from './router/clientesRoutes.js'; // Router de usuarios
-import productosRoutes  from './router/productosRoutes.js'; // Router de usuarios
-import usuariosRoutes  from './router/usuariosRoutes.js'; // Router de usuarios
-import categoriasRoutes  from './router/categoriaRoutes.js'; // Router de usuarios
-import proveedoresRoutes  from './router/proveedoresRoutes.js'; // Router de usuarios
+import clientesRoutes from './router/clientesRoutes.js'
+import productosRoutes  from './router/productosRoutes.js'
+import usuariosRoutes  from './router/usuariosRoutes.js'; 
+import categoriasRoutes  from './router/categoriaRoutes.js';
+import proveedoresRoutes  from './router/proveedoresRoutes.js';
+
 const app= express()
 
 import dotenv from 'dotenv';
@@ -32,7 +33,6 @@ app.get('/login', (req, res) => res.render('login',{title: 'Iniciar Sesión'}))
 
   
 app.get('/logout', (req, res) => {
-    // Aquí deberías eliminar el token o la sesión del usuario
     res.redirect('/login');
   });
 

@@ -1,4 +1,3 @@
-// src/controllers/productosController.js
 import pool from '../config/connection.js';
 
 export const renderProductos = async (req, res) => {

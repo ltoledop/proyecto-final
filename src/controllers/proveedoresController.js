@@ -1,7 +1,5 @@
-// src/controllers/proveedoresController.js
 import pool from '../config/connection.js';
 
-// Renderizar la página de proveedores
 export const renderProveedores = async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM proveedores');
@@ -10,13 +8,10 @@ export const renderProveedores = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
-
-// Renderizar la página para agregar un nuevo proveedor
 export const renderNuevoProveedor = (req, res) => {
   res.render('nuevoProveedor');
 };
 
-// Renderizar la página para editar un proveedor existente
 export const renderEditarProveedor = async (req, res) => {
   const { id } = req.params;
   try {
@@ -28,7 +23,6 @@ export const renderEditarProveedor = async (req, res) => {
   }
 };
 
-// Crear un nuevo proveedor
 export const crearProveedor = async (req, res) => {
   const { nombre, contacto, telefono, email, direccion } = req.body;
   try {
@@ -42,7 +36,6 @@ export const crearProveedor = async (req, res) => {
   }
 };
 
-// Actualizar un proveedor
 export const actualizarProveedor = async (req, res) => {
   const { id } = req.params;
   const { nombre, contacto, telefono, email, direccion } = req.body;
